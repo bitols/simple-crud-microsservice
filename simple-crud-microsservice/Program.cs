@@ -20,5 +20,7 @@ namespace simple_crud_microsservice
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
+
+
     }
 }

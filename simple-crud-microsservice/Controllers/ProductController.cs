@@ -30,7 +30,7 @@ namespace simple_crud_microsservice.Controllers
         }
 
         // GET: api/Product/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             var product = _productRepository.GetProductById(id);

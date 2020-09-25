@@ -29,9 +29,9 @@ namespace simple_crud_microsservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddDbContext<ProductContext>(opt => opt.UseInMemoryDatabase());
-            //services.AddDbContext<ProductContext>(x => x.UseSqlServer(Configuration.GetConnectionString("ProductDB")));
+            services.AddDbContext<ProductContext>(x => x.UseSqlServer(Configuration.GetConnectionString("ProductDB")));
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

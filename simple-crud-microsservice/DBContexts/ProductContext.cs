@@ -18,6 +18,11 @@ namespace simple_crud_microsservice.DBContexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Product>()
+                .Property(p => p.price)
+                .HasColumnType("decimal(18,4)");
+
             modelBuilder.Entity<Category>().HasData(
                 new Category
                 {

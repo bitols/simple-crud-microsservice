@@ -65,7 +65,8 @@ namespace simple_crud_microsservice.Migrations
 
                     b.Property<string>("name");
 
-                    b.Property<decimal>("price");
+                    b.Property<decimal>("price")
+                        .HasColumnType("decimal(18,4)");
 
                     b.HasKey("id");
 

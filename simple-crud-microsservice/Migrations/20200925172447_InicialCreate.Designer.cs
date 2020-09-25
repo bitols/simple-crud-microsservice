@@ -9,8 +9,8 @@ using simple_crud_microsservice.DBContexts;
 namespace simple_crud_microsservice.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20200924231822_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200925172447_InicialCreate")]
+    partial class InicialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -67,7 +67,8 @@ namespace simple_crud_microsservice.Migrations
 
                     b.Property<string>("name");
 
-                    b.Property<decimal>("price");
+                    b.Property<decimal>("price")
+                        .HasColumnType("decimal(18,4)");
 
                     b.HasKey("id");
 

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace simple_crud_microsservice.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InicialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,7 +29,7 @@ namespace simple_crud_microsservice.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(nullable: true),
                     description = table.Column<string>(nullable: true),
-                    price = table.Column<decimal>(nullable: false),
+                    price = table.Column<decimal>(type: "decimal(18,4)", nullable: false),
                     categoryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

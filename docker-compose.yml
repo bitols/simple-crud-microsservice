@@ -1,15 +1,17 @@
 version: '3.4'
 
 services:
+  sqldata:
+    ports:
+      - 1433:1433
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Pass@word
   simple-crud-microsservice:
     image: ${DOCKER_REGISTRY-}simplecrudmicrosservice
     build:
       context: .
       dockerfile: simple-crud-microsservice/Dockerfile
-  sqldata:
-    image: mcr.microsoft.com/mssql/server:2017-latest
-    environment:
-      - SA_PASSWORD=Pass@word
-      - ACCEPT_EULA=Y
-    ports:
-      - "5434:1433"
+    depends_on:
+      - sqldata

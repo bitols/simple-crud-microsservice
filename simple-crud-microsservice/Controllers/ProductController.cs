@@ -45,7 +45,7 @@ namespace simple_crud_microsservice.Controllers
             {
                 _productRepository.InsertProduct(product);
                 scope.Complete();
-                return CreatedAtAction(nameof(Get), new { id = product.id }, product);
+                return CreatedAtAction(nameof(Get), new { id = product.productId }, product);
             }
         }
 

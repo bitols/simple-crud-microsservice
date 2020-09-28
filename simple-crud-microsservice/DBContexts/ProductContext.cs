@@ -19,6 +19,7 @@ namespace simple_crud_microsservice.DBContexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Product>()
                 .Property(p => p.price)
                 .HasColumnType("decimal(18,4)");
@@ -26,19 +27,19 @@ namespace simple_crud_microsservice.DBContexts
             modelBuilder.Entity<Category>().HasData(
                 new Category
                 {
-                    id = 1,
+                    categoryId = 1,
                     name = "Electronics",
                     description = "Electronic Items",
                 },
                 new Category
                 {
-                    id = 2,
+                    categoryId = 2,
                     name = "Clothes",
                     description = "Dresses",
                 },
                 new Category
                 {
-                    id = 3,
+                    categoryId = 3,
                     name = "Grocery",
                     description = "Grocery Items",
                 }
